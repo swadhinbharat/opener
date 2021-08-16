@@ -72,6 +72,7 @@ window.onload = function () {
 
         if (pattern.length == 3 && !!pattern.match(/^[a-zA-Z]*([a-zA-Z0-9_-]){2}$/)) {
             buildRow('DLM', "https://dlm/systemcockpit/portal/#/search/%s".replace("%s", pattern), 0);
+            buildRow('WebGUI', "https://ldai2%s.wdf.sap.corp:44300/sap/bc/gui/sap/its/webgui".replace("%s", pattern), 0);
         }
         if (pattern.length == 10 && !!pattern.match(/^[a-zA-Z]{4}[0-9]{6}/)) {
             buildRow('SLC', "https://slc.wdf.sap.corp/tracer/?transport=%s&go=1".replace("%s", pattern), 0);
@@ -81,6 +82,9 @@ window.onload = function () {
         }
         if (!!/^\d{1,10}$/.test(pattern)) {
             buildRow('Notes', "https://i7p.wdf.sap.corp/sap/support/notes/%s".replace("%s", Number(pattern)), 0);
+        }
+        if (!!/^[0-9]{6}/.test(pattern)) {
+            buildRow('IPA', "https://ipa.wdf.sap.corp:8243/ipa?id=%s".replace("%s", Number(pattern)), 0);
         }
 
 
