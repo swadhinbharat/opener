@@ -73,6 +73,7 @@ window.onload = function () {
         if (pattern.length == 3 && !!pattern.match(/^[a-zA-Z]*([a-zA-Z0-9_-]){2}$/)) {
             buildRow('DLM', "https://dlm/systemcockpit/portal/#/search/%s".replace("%s", pattern), 0);
             buildRow('WebGUI', "https://ldai2%s.wdf.sap.corp:44300/sap/bc/gui/sap/its/webgui".replace("%s", pattern), 0);
+            buildRow('SLC', "https://slc.wdf.sap.corp/tracer/?transport=%s&go=1".replace("%s", pattern), 0);
         }
         if (pattern.length == 10 && !!pattern.match(/^[a-zA-Z0-9]{3}K[a-zA-Z0-9]{6}/)) {
             buildRow('SLC', "https://slc.wdf.sap.corp/tracer/?transport=%s&go=1".replace("%s", pattern), 0);
